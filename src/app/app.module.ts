@@ -1,3 +1,4 @@
+import { TopbarModule } from './shared/modules/topbar/topbar.module';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthModule } from './auth/auth.module';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
+    TopbarModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
