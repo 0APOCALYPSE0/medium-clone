@@ -1,5 +1,6 @@
+import { CurrentUserEffect } from './store/effects/current-user.effect';
 import { LoginEffect } from './store/effects/login.effect';
-import { PersistanceService } from './../shared/services/persistance.service';
+import { PersistanceService } from '../shared/services/persistance/persistance.service';
 import { BackendErrorMessagesModule } from 'src/app/shared/modules/backend-error-messages/backend-error-messages.module';
 import { RegisterEffect } from './store/effects/register.effect';
 import { AuthService } from './services/auth.service';
@@ -24,7 +25,7 @@ import { LoginComponent } from './components/login/login.component';
     AuthRoutingModule,
     BackendErrorMessagesModule,
     StoreModule.forFeature("auth", reducers),
-    EffectsModule.forFeature([RegisterEffect, LoginEffect]),
+    EffectsModule.forFeature([RegisterEffect, LoginEffect, CurrentUserEffect]),
   ],
   providers: [AuthService, PersistanceService]
 })

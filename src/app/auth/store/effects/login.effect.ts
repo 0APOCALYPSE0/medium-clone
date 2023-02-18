@@ -1,4 +1,4 @@
-import { PersistanceService } from './../../../shared/services/persistance.service';
+import { PersistanceService } from '../../../shared/services/persistance/persistance.service';
 import { CurrentUser } from './../../../shared/types/currentUser.interface';
 import { loginAction, loginSuccessAction, loginFailureAction } from './../actions/login.action';
 import { Injectable } from '@angular/core';

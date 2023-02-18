@@ -1,16 +1,18 @@
+import { map } from 'rxjs/operators';
 import { AuthResponse } from './../types/authResponse.interface';
 import { environment } from './../../../environments/environment';
 import { RegisterRequest } from './../types/registerRequest.interface';
 import { CurrentUser } from './../../shared/types/currentUser.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { LoginRequest } from '../types/loginRequest.interface';
 
 @Injectable()
 export class AuthService {
   private regisetrUrl:string = `${environment.apiUrl}/users`;
   private loginUrl:string = `${environment.apiUrl}/users/login`;
+  private userUrl:string = `${environment.apiUrl}/user`;
 
   constructor(private http:HttpClient) { }
 
@@ -25,4 +27,9 @@ export class AuthService {
   login(loginRequest:LoginRequest): Observable<CurrentUser> {
     return this.http.post<AuthResponse>(this.loginUrl, loginRequest).pipe(map(this.getUser));
   }
+
+  getCurrentUser(): Observable<CurrentUser>{
+    return this.http.get<AuthResponse>(this.userUrl).pipe(map(this.getUser));
+  }
+
 }
