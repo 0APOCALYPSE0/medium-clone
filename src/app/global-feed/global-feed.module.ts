@@ -1,3 +1,4 @@
+import { PopularTagsModule } from './../shared/modules/popular-tags/popular-tags.module';
 import { BannerModule } from './../shared/modules/banner/banner.module';
 import { FeedModule } from './../shared/modules/feed/feed.module';
 import { GlobalFeedRoutingModule } from './global-feed-routing.module';
@@ -15,7 +16,8 @@ import { GlobalFeedComponent } from './components/global-feed/global-feed.compon
     CommonModule,
     GlobalFeedRoutingModule,
     FeedModule,
-    BannerModule
+    BannerModule,
+    PopularTagsModule
   ]
 })
 export class GlobalFeedModule { }

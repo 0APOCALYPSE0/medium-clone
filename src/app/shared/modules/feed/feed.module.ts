@@ -1,3 +1,4 @@
+import { TagListModule } from './../tag-list/tag-list.module';
 import { PaginationModule } from './../pagination/pagination.module';
 import { ErrorModule } from './../error/error.module';
 import { LoadingModule } from './../loading/loading.module';
@@ -23,6 +24,7 @@ import { FeedComponent } from './components/feed/feed.component';
     LoadingModule,
     ErrorModule,
     PaginationModule,
+    TagListModule,
     StoreModule.forFeature("feed", reducers),
     EffectsModule.forFeature([FeedEffect])
   ],
