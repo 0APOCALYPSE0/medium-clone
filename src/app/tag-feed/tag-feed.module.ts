@@ -1,25 +1,25 @@
 import { FeedTogglerModule } from './../shared/modules/feed-toggler/feed-toggler.module';
 import { PopularTagsModule } from './../shared/modules/popular-tags/popular-tags.module';
-import { BannerModule } from './../shared/modules/banner/banner.module';
 import { FeedModule } from './../shared/modules/feed/feed.module';
-import { GlobalFeedRoutingModule } from './global-feed-routing.module';
+import { BannerModule } from './../shared/modules/banner/banner.module';
+import { TagFeedRoutingModule } from './tag-feed-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GlobalFeedComponent } from './components/global-feed/global-feed.component';
+import { TagFeedComponent } from './components/tag-feed/tag-feed.component';
 
 
 
 @NgModule({
   declarations: [
-    GlobalFeedComponent
+    TagFeedComponent
   ],
   imports: [
     CommonModule,
-    GlobalFeedRoutingModule,
-    FeedModule,
+    TagFeedRoutingModule,
     BannerModule,
+    FeedModule,
     PopularTagsModule,
     FeedTogglerModule
   ]
 })
-export class GlobalFeedModule { }
+export class TagFeedModule { }

@@ -1,3 +1,5 @@
+import { TagFeedModule } from './tag-feed/tag-feed.module';
+import { YourFeedModule } from './your-feed/your-feed.module';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
 import { AuthInterceptorService } from './shared/services/interceptor/auth-interceptor.service';
 import { PersistanceService } from './shared/services/persistance/persistance.service';
@@ -25,6 +27,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     HttpClientModule,
     TopbarModule,
     GlobalFeedModule,
+    YourFeedModule,
+    TagFeedModule,
     StoreModule.forRoot({ router: routerReducer }),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([]),
