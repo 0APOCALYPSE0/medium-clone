@@ -23,7 +23,6 @@ export class RegisterComponent implements OnInit {
     this.createForm();
     this.isSubmit$ = this.store.pipe(select(isSubmitSelector));
     this.errors$ = this.store.pipe(select(validationErrorsSelector));
-    console.log(this.isSubmit$);
   }
 
   createForm(): void{
@@ -35,7 +34,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void{
-    console.log("forms values ", this.registerForm.value);
     const registerReq:RegisterRequest = {
       user: this.registerForm.value
     }

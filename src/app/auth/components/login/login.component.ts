@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit{
     this.createForm();
     this.isSubmit$ = this.store.pipe(select(isSubmitSelector));
     this.errors$ = this.store.pipe(select(validationErrorsSelector));
-    console.log(this.isSubmit$);
   }
 
   createForm(): void{
@@ -34,7 +33,6 @@ export class LoginComponent implements OnInit{
   }
 
   onSubmit(): void{
-    console.log("forms values ", this.loginForm.value);
     const loginReq:LoginRequest = {
       user: this.loginForm.value
     }

@@ -1,3 +1,6 @@
+import { EditArticleModule } from './edit-article/edit-article.module';
+import { CreateArticleModule } from './create-article/create-article.module';
+import { ArticleModule } from './article/article.module';
 import { TagFeedModule } from './tag-feed/tag-feed.module';
 import { YourFeedModule } from './your-feed/your-feed.module';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
@@ -29,6 +32,9 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     GlobalFeedModule,
     YourFeedModule,
     TagFeedModule,
+    CreateArticleModule,
+    EditArticleModule,
+    ArticleModule,
     StoreModule.forRoot({ router: routerReducer }),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([]),
