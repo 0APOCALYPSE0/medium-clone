@@ -13,8 +13,7 @@ export class ArticleService {
   constructor(private http:HttpClient) { }
 
   getArticle(slug:string): Observable<Article>{
-    this.articleUrl = this.articleUrl+slug;
-    return this.http.get<ArticleResponse>(this.articleUrl).pipe(map((response:ArticleResponse) => response.article));
+    return this.http.get<ArticleResponse>(this.articleUrl+slug).pipe(map((response:ArticleResponse) => response.article));
   }
 
 }

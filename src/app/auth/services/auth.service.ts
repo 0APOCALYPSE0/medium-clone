@@ -1,3 +1,4 @@
+import { CurrentUserInput } from './../../shared/types/current-user-input.interface';
 import { map } from 'rxjs/operators';
 import { AuthResponse } from './../types/authResponse.interface';
 import { environment } from './../../../environments/environment';
@@ -30,6 +31,10 @@ export class AuthService {
 
   getCurrentUser(): Observable<CurrentUser>{
     return this.http.get<AuthResponse>(this.userUrl).pipe(map(this.getUser));
+  }
+
+  updateCurrentUser(user:CurrentUserInput): Observable<CurrentUser>{
+    return this.http.put<AuthResponse>(this.userUrl, {user}).pipe(map(this.getUser));
   }
 
 }

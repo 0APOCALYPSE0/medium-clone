@@ -1,3 +1,4 @@
+import { AddToFavoriteModule } from './../add-to-favorite/add-to-favorite.module';
 import { TagListModule } from './../tag-list/tag-list.module';
 import { PaginationModule } from './../pagination/pagination.module';
 import { ErrorModule } from './../error/error.module';
@@ -25,6 +26,7 @@ import { FeedComponent } from './components/feed/feed.component';
     ErrorModule,
     PaginationModule,
     TagListModule,
+    AddToFavoriteModule,
     StoreModule.forFeature("feed", reducers),
     EffectsModule.forFeature([FeedEffect])
   ],

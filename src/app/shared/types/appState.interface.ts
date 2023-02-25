@@ -1,3 +1,4 @@
+import { SettingsState } from './../../settings/types/settings-state.interface';
 import { EditArticleState } from './../../edit-article/types/edit-article-state.interface';
 import { CreateArticleState } from './../../create-article/types/create-article-state.interface';
 import { ArticleState } from './../../article/types/articleState.interface';
@@ -12,4 +13,5 @@ export interface AppState{
   article: ArticleState;
   createArticle:CreateArticleState;
   editArticle:EditArticleState;
+  settings: SettingsState
 }

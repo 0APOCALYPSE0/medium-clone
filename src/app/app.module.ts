@@ -1,3 +1,5 @@
+import { UserProfileModule } from './user-profile/user-profile.module';
+import { SettingsModule } from './settings/settings.module';
 import { EditArticleModule } from './edit-article/edit-article.module';
 import { CreateArticleModule } from './create-article/create-article.module';
 import { ArticleModule } from './article/article.module';
@@ -35,6 +37,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     CreateArticleModule,
     EditArticleModule,
     ArticleModule,
+    SettingsModule,
+    UserProfileModule,
     StoreModule.forRoot({ router: routerReducer }),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([]),

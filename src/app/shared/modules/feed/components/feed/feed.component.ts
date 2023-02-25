@@ -5,7 +5,7 @@ import { feedSelector, errorSelector, isLoadingSelector } from './../../store/se
 import { Observable, Subscription } from 'rxjs';
 import { feedAction } from './../../store/actions/feed.action';
 import { Store, select } from '@ngrx/store';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import queryString from 'query-string';
 
 @Component({
@@ -13,7 +13,7 @@ import queryString from 'query-string';
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss']
 })
-export class FeedComponent implements OnInit, OnDestroy {
+export class FeedComponent implements OnInit, OnChanges, OnDestroy {
   @Input() apiUrl!:string;
   feed$!: Observable<FeedResponse | null>;
   error$!: Observable<string | null>;
@@ -24,6 +24,13 @@ export class FeedComponent implements OnInit, OnDestroy {
   currentPage!:number;
 
   constructor(private store:Store, private router:Router, private route:ActivatedRoute) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const isApiUrlChanged:boolean = !changes['apiUrl'].firstChange && changes['apiUrl'].currentValue !== changes['apiUrl'].previousValue;
+    if(isApiUrlChanged){
+      this.fetchFeed();
+    }
+  }
 
   ngOnInit(): void{
     this.initializeValues();
